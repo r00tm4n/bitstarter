@@ -63,11 +63,8 @@ var clone = function(fn) {
     return fn.bind({});
 };
 
-
-
 //We want to get inpput from an url
 var getContentFromUrlWriteToFile = function(tmpfile, url){
-    var content ='';
     rest.get(url).on('complete', function(result){
 	if(result instanceof Error){
             fs.writeFile(tmpfile, '');
@@ -77,7 +74,6 @@ var getContentFromUrlWriteToFile = function(tmpfile, url){
     });
     
 };
-
 
 if(require.main == module) {
     program
